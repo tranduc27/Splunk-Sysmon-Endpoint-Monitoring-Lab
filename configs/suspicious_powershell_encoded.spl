@@ -1,0 +1,5 @@
+index=wineventlog sourcetype="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1
+| search Image="*\\powershell.exe" OR OriginalFileName="PowerShell.EXE"
+| search CommandLine="*-enc*" OR CommandLine="*-EncodedCommand*"
+| table _time host User Image ParentImage CommandLine ProcessId ParentProcessId
+| sort - _time

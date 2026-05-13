@@ -1,0 +1,3 @@
+index=wineventlog sourcetype="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1
+| table _time host User Image ParentImage CommandLine ProcessId ParentProcessId
+| sort - _time
